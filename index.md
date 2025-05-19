@@ -13,6 +13,7 @@ This website presents the full project documentation, including:
 - [🛠️ Methodology](methodology.md)
 - [💬 SPARQL & Prompts](sparql.md)
 - [⚠️ Challenges](challenges.md)
+- [⚠️ LLM](llm.md)
 
 ---
 
