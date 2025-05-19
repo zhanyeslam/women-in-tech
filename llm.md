@@ -1,7 +1,15 @@
 ---
+layout: page
 title: LLM Comparison
 permalink: /llm.md/
 ---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jekyll-theme-cayman/0.1.1/jekyll-theme-cayman.min.css">
+<style>
+  body { max-width: 800px; margin: auto; padding: 2rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+  th, td { padding: 0.6em; border: 1px solid #ccc; }
+</style>
 
 # 🤖 Prompting with Language Models (LLMs)
 
