@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Methodology
-permalink: /methodology/
+permalink: /methodology.md/
 ---
 
 # Methodology
