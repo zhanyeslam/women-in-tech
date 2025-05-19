@@ -9,10 +9,10 @@ Welcome to our semantic web project exploring how women-led startups can be mode
 
 This website presents the full project documentation, including:
 
-- [📌 Topic](topic.md)
-- [🛠️ Methodology](methodology.md)
-- [💬 SPARQL & Prompts](sparql.md)
-- [⚠️ Challenges](challenges.md)
+- [📌 Topic](topic)
+- [🛠️ Methodology](methodology)
+- [💬 SPARQL & Prompts](sparql)
+- [⚠️ Challenges](challenges)
 
 ---
 
