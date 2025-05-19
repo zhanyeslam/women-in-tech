@@ -8,12 +8,13 @@ permalink: /llm.md/
 <style>
   body { max-width: 800px; margin: auto; padding: 2rem; }
   table { width: 100%; border-collapse: collapse; margin: 1em 0; }
-  th, td { padding: 0.6em; border: 1px solid #ccc; }
+  th, td { padding: 0.6em; border: 1px solid #ccc; text-align: left; }
+  h2, h3 { margin-top: 2em; }
 </style>
 
 # 🤖 Prompting with Language Models (LLMs)
 
-In this section, we explore how two different LLMs — **GPT-4 (ChatGPT)** and **GitHub Copilot** — respond to the same prompts related to the topic *Women in Tech*. We applied **three prompting techniques**: zero-shot, one-shot, and few-shot.
+In this section, we explore how two different LLMs — **GPT-4 (ChatGPT)** and **GitHub Copilot** — respond to the same prompts related to the topic *Women in Tech*. We applied **three prompting techniques**: zero-shot, **chain-of-thought (CoT)**, and few-shot.
 
 ---
 
@@ -58,7 +59,6 @@ GPT-4 gave complete, contextual bios. Copilot returned short, functional descrip
 **Observation:**  
 GPT-4 followed the step-by-step reasoning well — domain → application → contribution.  
 Copilot produced flat outputs, ignoring the CoT structure and skipping logic progression.
-
 
 ---
 
@@ -109,4 +109,4 @@ Both models were effective, but GPT-4 was clearly superior for this research-dri
 - Prompting performed manually in **ChatGPT (GPT-4)** and **Visual Studio Code (Copilot)**  
 - Prompts documented in plain text  
 - Analysis compiled using Markdown and structured formatting  
-- GitHub Pages used for project website presentation
+- GitHub Pages
