@@ -1,36 +1,18 @@
 ---
 layout: page
 title: LLM Comparison
-permalink: /llm.md/
+permalink: /llm/
 ---
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jekyll-theme-cayman/0.1.1/jekyll-theme-cayman.min.css">
-
 <style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1em 0;
-  }
-  th, td {
-    padding: 0.6em;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-  body {
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  }
-  h1, h2, h3 {
-    margin-top: 2em;
-  }
+  body { max-width: 800px; margin: auto; padding: 2rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+  th, td { padding: 0.6em; border: 1px solid #ccc; }
 </style>
 
 # 🤖 Prompting with Language Models (LLMs)
 
-In this section, we explore how two different LLMs — **GPT-4 (ChatGPT)** and **GitHub Copilot** — respond to the same prompts related to the topic *Women in Tech*. We applied **three prompting techniques**: zero-shot, **chain-of-thought (CoT)**, and few-shot.
+In this section, we explore how two different LLMs — **GPT-4 (ChatGPT)** and **GitHub Copilot** — respond to the same prompts related to the topic *Women in Tech*. We applied **three prompting techniques**: zero-shot, one-shot, and few-shot.
 
 ---
 
@@ -54,27 +36,24 @@ GPT-4 gave complete, contextual bios. Copilot returned short, functional descrip
 
 ---
 
-## 🧠 Prompting Technique 2: Chain-of-Thought (CoT)
+## 🧠 Prompting Technique 2: One-shot
 
 ### Prompt
-> Ada Lovelace is considered a pioneer in computing.  
-> Let’s now think of modern women contributing to AI.  
-> First, identify their area of expertise.  
-> Then explain how they apply AI in that domain.  
-> Finally, summarize each contribution in one sentence.
+> Example: Ada Lovelace – Pioneer in computing.  
+> Now list 3 modern women in AI with a short description.
 
 ### Comparison Table
 
 | Name               | GPT-4 Output                                                                 | GitHub Copilot Output         |
 |--------------------|------------------------------------------------------------------------------|-------------------------------|
-| **Chelsea Finn**    | Expert in robotics and meta-learning. Applies AI to train robots across tasks. “Chelsea Finn develops AI systems that allow robots to learn from few examples.” | Robotics and ML               |
-| **Dina Machuve**    | Works in agriculture and AI. Uses machine learning to predict crop diseases. “Dina Machuve applies AI to solve agricultural challenges in Africa.” | *(Not included)*              |
-| **Kate Crawford**   | Specializes in AI ethics and its societal impact. Analyzes bias in large-scale models. “Kate Crawford investigates how AI affects social justice.” | AI ethics                     |
-| **Joy Buolamwini**  | Focuses on facial recognition bias. Created Algorithmic Justice League. “Joy Buolamwini challenges bias in AI systems.” | Algorithmic fairness          |
+| **Chelsea Finn**    | Stanford researcher in robotics and meta-learning                           | Robotics and ML               |
+| **Dina Machuve**    | Applies machine learning to agriculture in Africa                           | *(Not included)*              |
+| **Kate Crawford**   | Studies the societal impact of AI                                           | AI ethics                     |
+| **Joy Buolamwini**  | *(Not included)*                                                            | Algorithmic fairness          |
 
 **Observation:**  
-GPT-4 followed the step-by-step reasoning well — domain → application → contribution.  
-Copilot produced flat outputs, ignoring the CoT structure and skipping logic progression.
+GPT-4 shows broader geographic and academic variety.  
+Copilot listed only known names, more concise but less diverse.
 
 ---
 
