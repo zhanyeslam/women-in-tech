@@ -1,5 +1,4 @@
 ---
-layout: page
 title: LLM Comparison
 permalink: /llm.md/
 ---
