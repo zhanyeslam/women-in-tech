@@ -8,9 +8,9 @@ permalink: /llm.md/
 <style>
   body { max-width: 800px; margin: auto; padding: 2rem; }
   table { width: 100%; border-collapse: collapse; margin: 1em 0; }
-  th, td { padding: 0.6em; border: 1px solid #ccc; text-align: left; }
-  h2, h3 { margin-top: 2em; }
+  th, td { padding: 0.6em; border: 1px solid #ccc; }
 </style>
+
 
 # 🤖 Prompting with Language Models (LLMs)
 
