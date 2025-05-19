@@ -5,12 +5,28 @@ permalink: /llm.md/
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jekyll-theme-cayman/0.1.1/jekyll-theme-cayman.min.css">
-<style>
-  body { max-width: 800px; margin: auto; padding: 2rem; }
-  table { width: 100%; border-collapse: collapse; margin: 1em 0; }
-  th, td { padding: 0.6em; border: 1px solid #ccc; }
-</style>
 
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+  }
+  th, td {
+    padding: 0.6em;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  body {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  h1, h2, h3 {
+    margin-top: 2em;
+  }
+</style>
 
 # 🤖 Prompting with Language Models (LLMs)
 
@@ -109,4 +125,4 @@ Both models were effective, but GPT-4 was clearly superior for this research-dri
 - Prompting performed manually in **ChatGPT (GPT-4)** and **Visual Studio Code (Copilot)**  
 - Prompts documented in plain text  
 - Analysis compiled using Markdown and structured formatting  
-- GitHub Pages
+- GitHub Pages used for project website presentation
