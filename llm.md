@@ -1,7 +1,7 @@
 ---
 layout: page
 title: LLM Comparison
-permalink: /llm/
+permalink: /llm.md/
 ---
 
 # 🤖 Prompting with Language Models (LLMs)
