@@ -17,7 +17,6 @@ In this section, we explore how two different LLMs — **GPT-4 (ChatGPT)** and *
 5. **Rana el Kaliouby** – Co-founder of Affectiva, expert in emotion AI.
 
 ### GitHub Copilot Output
-```text
 - Fei-Fei Li: Computer vision expert.
 - Joy Buolamwini: AI bias researcher.
 - Timnit Gebru: AI ethics.
