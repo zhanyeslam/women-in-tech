@@ -1,82 +1,35 @@
 ---
-layout: default
-title: SPARQL & Prompts
+title: SPARQL Explorer
 permalink: /sparql/
 ---
 
-# SPARQL Queries and Prompting Techniques
+# 🔍 Women in Tech – SPARQL Explorer
 
-This section presents all SPARQL queries used in the project with the required operators, and the prompt engineering strategies used to generate or enrich RDF data using language models.
+This section shows a **live query** to Wikidata using SPARQL.  
+We explore **female founders in technology**, along with descriptions of the companies they founded.
 
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+---
 
-```sparql
-SELECT ?woman ?womanLabel ?startup ?startupLabel
-WHERE {
-  ?woman wdt:P31 wd:Q5 ;               # instance of human
-         wdt:P21 wd:Q6581072 ;         # gender: female
-         wdt:P112 ?startup .           # founder of
+## 📡 Live Query from Wikidata
 
-  ?startup wdt:P452 wd:Q627335 ;       # industry: tech startup
+<iframe
+  style="width: 100%; height: 600px; border: 1px solid #ccc;"
+  src="https://query.wikidata.org/embed.html#SELECT%20DISTINCT%20%3Fwoman%20%3FwomanLabel%20%3FcompanyLabel%20%3FcompanyDescription%20WHERE%20%7B%0A%20%20%3Fwoman%20wdt%3AP31%20wd%3AQ5%20%3B%20%20%20%20%20%20%20%20%23%20instance%20of%20human%0A%20%20%20%20%20%20%20%20wdt%3AP21%20wd%3AQ6581072%20%3B%20%20%20%20%20%20%20%20%23%20female%0A%20%20%20%20%20%20%20%20wdt%3AP112%20%3Fcompany%20.%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20founder%20of%20company%0A%0A%20%20%3Fcompany%20wdt%3AP31%20%3Ftype%20%3B%0A%20%20%20%20%20%20%20%20schema%3Adescription%20%3FcompanyDescription%20.%0A%0A%20%20FILTER%28LANG%28%3FcompanyDescription%29%20%3D%20%22en%22%29%0A%20%20FILTER%28%3Ftype%20IN%20%28wd%3AQ4830453%2C%20wd%3AQ79913%2C%20wd%3AQ230844%2C%20wd%3AQ167037%2C%20wd%3AQ7397%29%29%20%23%20business%2C%20NGO%2C%20org%2C%20platform%2C%20tech%0A%0A%20%20FILTER%28REGEX%28%3FcompanyDescription%2C%20%22tech%7CAI%7Csoftware%7Cdigital%7CIT%7Cplatform%22%2C%20%22i%22%29%29%0A%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0ALIMIT%2030">
+</iframe>
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
-LIMIT 10
-```
+---
 
-```sparql
-SELECT ?startup ?startupLabel ?founder ?founderLabel
-WHERE {
-  ?founder wdt:P21 wd:Q6581072 ;        # gender: female
-           wdt:P27 wd:Q30 ;            # country of citizenship: USA
-           wdt:P112 ?startup .
+## 💬 Explanation
 
-  ?startup wdt:P31 wd:Q4830453 .        # instance of: business
-  
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
-LIMIT 10
-```
+- `?woman` must be a human (`wd:Q5`) and female (`wd:Q6581072`)
+- They must be a **founder** (`P112`) of a company
+- That company must be of type tech/business/platform and contain **tech keywords**
+- We display: woman's name, company name, and company description (in English)
 
-```sparql
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+---
 
-SELECT ?startup ?startupLabel ?industryLabel
-WHERE {
-  ?startup wdt:P31 wd:Q4830453 ;        # instance of: business
-           wdt:P452 ?industry .         # industry
+## 🛠️ Tools Used
 
-  FILTER(REGEX(?industryLabel, "EdTech|AI|education", "i"))
-
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
-LIMIT 15
-```
-
-```sparql
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT ?countryLabel (COUNT(?startup) AS ?total)
-WHERE {
-  {
-    ?founder wdt:P21 wd:Q6581072 ;       # female
-             wdt:P112 ?startup .
-    ?founder wdt:P27 ?country .
-  }
-  UNION
-  {
-    ?startup wdt:P17 ?country .         # startup located in country
-  }
-
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
-GROUP BY ?countryLabel
-ORDER BY DESC(?total)
-```
+- [Wikidata Query Service](https://query.wikidata.org/)
+- SPARQL
+- GitHub Pages (static hosting)
