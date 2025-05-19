@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Topic
-permalink: /topic/
+permalink: /topic.md/
 ---
 
 # Project Topic: Women in Tech and Their Startups
