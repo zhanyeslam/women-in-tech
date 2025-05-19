@@ -17,3 +17,4 @@ WHERE {
            ex:founded ?startup .
 }
 ORDER BY ?founder
+```
