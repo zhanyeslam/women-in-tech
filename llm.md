@@ -37,8 +37,6 @@ GPT-4 gave complete, contextual bios. Copilot returned short, functional descrip
 
 ---
 
----
-
 ## 🧠 Prompting Technique 2: Chain-of-Thought (CoT)
 
 ### Prompt
