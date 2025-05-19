@@ -1,7 +1,7 @@
 ---
 layout: page
 title: LLM Comparison
-permalink: /llm/
+permalink: /llm.md/
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jekyll-theme-cayman/0.1.1/jekyll-theme-cayman.min.css">
 <style>
